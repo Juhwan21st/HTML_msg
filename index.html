@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview Email</title>
+    <title>Juhwan's Presentation</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
@@ -19,6 +19,7 @@
             background-color: #ffffff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
         }
         .header {
             position: relative;
@@ -31,13 +32,111 @@
             max-height: 170px;
             object-fit: cover;
             display: block;
+            border-radius: 10px 10px 0 0;
         }
         .content {
             margin: 20px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
         }
         .content p, .content ul {
             margin: 10px 0;
-            line-height: 1.6;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .tab:hover {
+            background-color: #ddd;
+        }
+        .tab.active {
+            background-color: #ddd;
+            font-weight: bold;
+        }
+        .tab-content {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #e3e3e3;
+            border-radius: 10px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-content h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: linear-gradient(135deg, #b3cde0 0%, #6497b1 20%, #6497b1 80%, #b3cde0 100%); /* 연한 그라데이션 배경 */
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 살짝의 그림자 효과 */
+            text-align: center; /* 텍스트 중앙 정렬 */
+        }
+        .slider-container {
+            margin: 20px 0;
+            padding: 10px 0;
+            border-top: 1px solid #eaeaea;
+            background-color: #f0f0f0;
+        }
+        .slider-container h3 {
+            text-align: center;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+        .slider {
+            position: relative;
+            text-align: center;
+        }
+        .slider img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .slider button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            color: #555;
+            z-index: 2;
+        }
+        .slider #prev {
+            left: 0;
+        }
+        .slider #next {
+            right: 0;
+        }
+        .slider #page-num {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
         }
         .footer {
             text-align: center;
@@ -46,6 +145,7 @@
             padding: 10px 0;
             border-top: 1px solid #eaeaea;
             background-color: #737270;
+            border-radius: 0 0 10px 10px;
         }
         .footer a {
             color: #ffffff;
@@ -55,6 +155,38 @@
             width: 20px;
             height: 20px;
         }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+                max-width: 100%;
+            }
+            .tabs {
+                flex-direction: column;
+            }
+            .tab {
+                padding: 15px;
+            }
+            .slider button {
+                font-size: 20px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .container {
+                max-width: 800px;
+            }
+            .slider-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .slider img {
+                width: 50%;
+                margin: 0 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -63,27 +195,59 @@
             <img src="https://i.imgur.com/5RHkAK8.png" alt="Header Image">
         </div>
         <div class="content">
-            <p>Good morning, Cam,</p>
-            <p>I hope this email finds you well. Apologies for the delay in getting this email to you; it took a bit longer than expected due to some issues with coding the email and rendering the video.</p>
-            <p>I wanted to thank you again for the interview last Friday. It was great to engage with you, learn more about VARLab's work, and share my experiences.</p>
-            <p>As mentioned during our conversation, I’m sending over my presentation materials. To make it more convenient, I’ve included them directly in the email.</p>
-            <p>Additionally, I’ve attached a video summarizing some points I didn’t get to mention during the interview. If you have time to review it, I hope it helps provide a fuller picture of my qualifications and experiences.</p>
-            <p>Thank you again for your time and consideration. Please feel free to reach out if you need any further information.</p>
-            <p>Best regards,<br><br>Juhwan Seo</p>
+            <p>Hello!</p>
+            <p>Welcome to my page! I'm thrilled to share my work with you. Please take a moment to explore the two tabs by clicking the buttons below. If you have any questions or need more information, feel free to reach out at any time.</p>
+            <p>Thank you for taking the time to visit!</p>
+            <p>Have a great day!</p>
         </div>
-        <div class="video-content" style="text-align: center; margin: 20px 0; padding: 20px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 10px;">
-            <h2 style="font-family: 'Roboto', sans-serif; color: #333;">Creating an Immersive Mixed Reality Game with Unity 3D!</h2>
-            <video width="100%" controls style="border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <div class="tabs">
+            <div class="tab" data-target="pptContent">PPT</div>
+            <div class="tab" data-target="cardInterviewContent">Q&amp;A</div>
+        </div>
+        <div id="pptContent" class="tab-content">
+            <h3>Creating an Immersive Mixed Reality Game with Unity 3D!</h3>
+            <video width="100%" controls>
                 <source src="https://imgur.com/2sfOmaV.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
-        <div class="slider-content" style="text-align: center; margin: 20px 0; padding: 20px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 10px;">
-            <h2 style="font-family: 'Roboto', sans-serif; color: #333;">Hello! It's Juhwan, again.</h2>
-            <video width="100%" controls style="border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-                <source src="https://i.imgur.com/fTjGPcs.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div id="cardInterviewContent" class="tab-content">
+            <h3>HELLO! It's Juhwan, again!</h3>
+            <div class="slider-container">
+                <div class="slider">
+                    <button id="prev">&#9664;</button>
+                    <div id="slider" style="overflow: hidden; width: 100%;">
+                        <div style="display: flex; transition: transform 0.5s ease;">
+                            <div style="min-width: 100%;">
+                                <img src="https://i.imgur.com/zfzhO5H.png" alt="Slide 1">
+                            </div>
+                            <div style="min-width: 100%;">
+                                <img src="https://i.imgur.com/SwIklp8.png" alt="Slide 2">
+                            </div>
+                            <div style="min-width: 100%;">
+                                <img src="https://i.imgur.com/jJArfAp.png" alt="Slide 3">
+                            </div>
+                            <div style="min-width: 100%;">
+                                <img src="https://i.imgur.com/rSrYC4c.png" alt="Slide 4">
+                            </div>
+                            <div style="min-width: 100%;">
+                                <img src="https://i.imgur.com/O3WIVFS.png" alt="Slide 5">
+                            </div>
+                            <div style="min-width: 100%;">
+                                <img src="https://i.imgur.com/mPmFAB4.png" alt="Slide 6">
+                            </div>
+                            <div style="min-width: 100%;">
+                                <img src="https://i.imgur.com/Ktt7pHB.png" alt="Slide 7">
+                            </div>
+                            <div style="min-width: 100%;">
+                                <img src="https://i.imgur.com/CYYEx17.png" alt="Slide 8">
+                            </div>
+                        </div>
+                    </div>
+                    <button id="next">&#9654;</button>
+                    <div id="page-num"></div> <!-- 페이지 넘버 표시 -->
+                </div>
+            </div>
         </div>
         <div class="footer">
             <div>
@@ -98,5 +262,59 @@
             <p>Email: <a href="mailto:jseo9123@conestogac.on.ca">jseo9123@conestogac.on.ca</a></p>
         </div>
     </div>
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                tabContents.forEach(content => content.classList.remove('active'));
+                document.getElementById(tab.dataset.target).classList.add('active');
+            });
+        });
+
+        // 초기 상태로 첫 번째 탭을 활성화
+        tabs[0].classList.add('active');
+        tabContents[0].classList.add('active');
+
+        const slider = document.getElementById('slider').firstElementChild;
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const pageNum = document.getElementById('page-num');
+        let currentSlide = 0;
+        const totalSlides = slider.children.length;
+
+        function updateButtons() {
+            prevButton.style.display = 'block';
+            nextButton.style.display = 'block';
+            pageNum.textContent = `Page ${currentSlide + 1} of ${totalSlides}`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            if (currentSlide === 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide--;
+            }
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            updateButtons();
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentSlide === totalSlides - 1) {
+                currentSlide = 0;
+            } else {
+                currentSlide++;
+            }
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            updateButtons();
+        });
+
+        // 초기 버튼 상태 업데이트
+        updateButtons();
+    </script>
 </body>
 </html>
